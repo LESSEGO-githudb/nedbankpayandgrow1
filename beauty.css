@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  background-color: #056329;
+  color: #000000;
+}
+
+main, section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  background-color: #056329;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(3, 128, 51, 0.05);
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.03);
+}
+
+header, footer {
+  background: linear-gradient(to right,#056329, #000000);
+  padding: 1.5rem 1rem;
+  position: relative;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+footer {
+  background: #056329;
+  color: #000000;
+  font-weight: 500;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.2rem;
+  color: #006622;
+}
+
+#navbar {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 0.8rem;
+}
+
+#navbar a {
+  text-decoration: none;
+  color: #006627;
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+#navbar a:hover {
+  background-color: rgba(0, 51, 102, 0.1);
+}
+
+#menu-toggle {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #015a0f;
+  cursor: pointer;
+  position: absolute;
+  top: 1.2rem;
+  right: 1rem;
+  z-index: 1001;
+}
+
+@media (max-width: 768px) {
+  #menu-toggle {
+    display: block;
+  }
+
+  #navbar {
+    display: none;
+    flex-direction: column;
+    align-items: flex-end;
+    position: absolute;
+    top: 4rem;
+    right: 1rem;
+    background-color: #000000;
+    border: 1px solid #000000;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 4px 10px rgba(201, 231, 207, 0.1);
+    z-index: 1000;
+  }
+
+  #navbar.show {
+    display: flex;
+  }
+
+  #navbar a {
+    padding: 0.5rem 1rem;
+    width: 100%;
+    text-align: right;
+  }
+}
+
+button {
+  font-family: 'Poppins', sans-serif;
+  padding: 0.5rem 1.2rem;
+  border: none;
+  background-color: #056329;
+  color: rgb(255, 255, 255);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #000000;
+}
+
+/* Popup modal */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup-content {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 12px;
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.4s ease;
+}
+
+.popup-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.close-button {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  font-size: 28px;
+  background: #fff;
+  border-radius: 50%;
+  color: #006616;
+  width: 32px;
+  height: 32px;
+  text-align: center;
+  line-height: 32px;
+  cursor: pointer;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

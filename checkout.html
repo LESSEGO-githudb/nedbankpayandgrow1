@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Checkout | NedbankPayandGrow</title>
+  <link rel="stylesheet" href="beauty.css" />
+
+  <!-- Load EmailJS v4 -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      emailjs.init({
+        publicKey: "FYBumMxOg9zim0yN3"  // ✅ Replace with your actual public key
+      });
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <img src="pictures/Gemini_Generated_Image_8zlmf68zlmf68zlm-removebg-preview-removebg-preview.png" alt="NIVEA Logo" width="100">
+    <h1> Nedbank Pay and Grow </h1>
+    <button id="menu-toggle">☰</button>
+    <nav id="navbar">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="cart.html">Cart</a>
+      <a href="checkout.html">Checkout</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Checkout</h2>
+      <p>Please review your order and fill in your details to complete your purchase.</p>
+
+      <div id="order-summary">
+        <h3>Order Summary</h3>
+        <div id="checkout-items"></div>
+        <p><strong>Subtotal:</strong> R<span id="subtotal">0.00</span></p>
+        <p><strong>Shipping:</strong> R40.00</p>
+        <p><strong>Total:</strong> R<span id="total">0.00</span></p>
+      </div>
+
+      <form id="checkout-form">
+        <h3>Billing Details</h3>
+        <label>
+          Full Name:<br>
+          <input type="text" name="name" required />
+        </label><br><br>
+        <label>
+          Email:<br>
+          <input type="email" name="email" required />
+        </label><br><br>
+        <label>
+          Shipping Address:<br>
+          <textarea name="address" required></textarea>
+        </label><br><br>
+
+        <h3>Payment Method</h3>
+        <label><input type="radio" name="paymentMethod" value="Card" required /> Credit/Debit Card</label><br>
+        <label><input type="radio" name="paymentMethod" value="EFT" required /> EFT / Bank Transfer</label><br>
+        <label><input type="radio" name="paymentMethod" value="Cash on Delivery" required /> Cash on Delivery</label><br><br>
+
+        <button type="submit">Place Order</button>
+      </form>
+
+      <div id="confirmation-message" style="display:none;">
+        <h3>Thank you!</h3>
+        <p>Your order has been placed successfully. A confirmation email will be sent shortly.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 NedbankPayandGrow</p>
+  </footer>
+
+  <!-- JS file -->
+  <script src="checkout.js"></script>
+</body>
+</html>
